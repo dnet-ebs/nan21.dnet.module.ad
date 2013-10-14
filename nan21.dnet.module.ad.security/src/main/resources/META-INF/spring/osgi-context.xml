@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/osgi
+		http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+
+	<osgi:reference id="osgiSettings" cardinality="0..1"
+		interface="net.nan21.dnet.core.api.ISettings" />
+
+	<osgi:reference id="entityManagerFactory" cardinality="0..1"
+		interface="javax.persistence.EntityManagerFactory" />
+
+	<osgi:reference id="transactionManager" cardinality="0..1"
+		interface="org.springframework.transaction.PlatformTransactionManager" />
+
+	<osgi:service id="osgiChangePasswordService" ref="changePasswordService"
+		interface="net.nan21.dnet.core.api.security.IChangePasswordService" />
+
+	<osgi:service id="osgiPasswordValidator" ref="passwordValidator"
+		interface="net.nan21.dnet.core.api.security.IPasswordValidator" />
+
+	<osgi:service id="osgiAuthenticationClientUserService"
+		ref="authenticationClientUserService"
+		interface="net.nan21.dnet.core.api.security.IAuthenticationClientUserService" />
+
+	<osgi:service id="osgiAuthorizationFactory" ref="authorizationFactory"
+		interface="net.nan21.dnet.core.api.security.IAuthorizationFactory" />
+</beans>

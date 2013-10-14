@@ -1,0 +1,5 @@
+[
+	"nan21.dnet.module.ad.ui.extjs/ds/AccessControl_Ds", 
+	"nan21.dnet.module.ad.ui.extjs/lov/AccessControls_Lov", 
+	"nan21.dnet.module.ad.ui.extjs/lov/Roles_Lov"
+]

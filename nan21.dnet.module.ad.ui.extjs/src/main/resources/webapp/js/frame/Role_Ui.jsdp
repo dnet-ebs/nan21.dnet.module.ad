@@ -1,0 +1,7 @@
+[
+	"nan21.dnet.module.ad.ui.extjs/asgn/Role_MenuItem_Asgn", 
+	"nan21.dnet.module.ad.ui.extjs/asgn/Role_Menu_Asgn", 
+	"nan21.dnet.module.ad.ui.extjs/dc/Role_Dc", 
+	"nan21.dnet.module.ad.ui.extjs/asgn/Role_AccessControl_Asgn", 
+	"nan21.dnet.module.ad.ui.extjs/asgn/Role_User_Asgn"
+]

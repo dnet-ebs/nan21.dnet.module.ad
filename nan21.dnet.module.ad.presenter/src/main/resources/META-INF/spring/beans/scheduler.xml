@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- ==================== JobContext ==================== -->
+		
+	<bean id="JobContext_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.scheduler.model.JobContext_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.scheduler.JobContext"/>
+		<property name="rpcData" >
+			<map>
+				<entry key="synchronizeParameters">
+					<bean class="net.nan21.dnet.core.presenter.descriptor.RpcDefinition">
+						<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad.presenter.ext.scheduler.delegate.JobContext_Pd"/>
+						<constructor-arg name="methodName" value="synchronizeParameters" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- ==================== JobContextLov ==================== -->
+		
+	<bean id="JobContextLov_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.scheduler.model.JobContextLov_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.scheduler.JobContext"/>
+		<property name="readOnly" value="true" />
+	</bean>
+	
+	<!-- ==================== JobContextParam ==================== -->
+		
+	<bean id="JobContextParam_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.scheduler.model.JobContextParam_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.scheduler.JobContextParam"/>
+	</bean>
+	
+	<!-- ==================== JobTimer ==================== -->
+		
+	<bean id="JobTimer_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.scheduler.model.JobTimer_Ds"/>
+		<property name="filterClass" value="net.nan21.dnet.module.ad.presenter.impl.scheduler.model.JobTimer_DsFilter"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.scheduler.JobTimer"/>
+	</bean>
+	
+	<!-- ==================== JobTimerLov ==================== -->
+		
+	<bean id="JobTimerLov_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.scheduler.model.JobTimerLov_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.scheduler.JobTimer"/>
+		<property name="readOnly" value="true" />
+	</bean>
+	
+	<!-- ==================== JobLog ==================== -->
+		
+	<bean id="JobLog_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.scheduler.model.JobLog_Ds"/>
+		<property name="filterClass" value="net.nan21.dnet.module.ad.presenter.impl.scheduler.model.JobLog_DsFilter"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.scheduler.JobLog"/>
+		<property name="noInsert" value="true" />
+		<property name="noUpdate" value="true" />
+	</bean>
+	
+	<!-- ==================== JobLogMessage ==================== -->
+		
+	<bean id="JobLogMessage_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.scheduler.model.JobLogMessage_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.scheduler.JobLogMessage"/>
+		<property name="readOnly" value="true" />
+	</bean>
+</beans>

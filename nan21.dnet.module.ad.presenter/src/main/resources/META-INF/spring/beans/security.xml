@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- ==================== User ==================== -->
+		
+	<bean id="User_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.User_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.User"/>
+		<property name="paramClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.User_DsParam"/>
+		<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.presenter.impl.security.qb.User_DsQb" />
+		<property name="rpcData" >
+			<map>
+				<entry key="changePassword">
+					<bean class="net.nan21.dnet.core.presenter.descriptor.RpcDefinition">
+						<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad.presenter.ext.security.delegate.User_Pd"/>
+						<constructor-arg name="methodName" value="changePassword" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- ==================== UserLov ==================== -->
+		
+	<bean id="UserLov_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.UserLov_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.User"/>
+	</bean>
+	
+	<!-- ==================== MyUser ==================== -->
+		
+	<bean id="MyUser_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.MyUser_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.User"/>
+		<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.presenter.impl.security.qb.MyUser_DsQb" />
+	</bean>
+	
+	<!-- ==================== UserGroup ==================== -->
+		
+	<bean id="UserGroup_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.UserGroup_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.UserGroup"/>
+	</bean>
+	
+	<!-- ==================== UserGroupLov ==================== -->
+		
+	<bean id="UserGroupLov_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.UserGroupLov_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.UserGroup"/>
+		<property name="readOnly" value="true" />
+	</bean>
+	
+	<!-- ==================== Role ==================== -->
+		
+	<bean id="Role_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.Role_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.Role"/>
+	</bean>
+	
+	<!-- ==================== RoleLov ==================== -->
+		
+	<bean id="RoleLov_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.RoleLov_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.Role"/>
+		<property name="readOnly" value="true" />
+	</bean>
+	
+	<!-- ==================== Menu ==================== -->
+		
+	<bean id="Menu_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.Menu_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.Menu"/>
+	</bean>
+	
+	<!-- ==================== MenuLov ==================== -->
+		
+	<bean id="MenuLov_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.MenuLov_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.Menu"/>
+	</bean>
+	
+	<!-- ==================== MenuRtLov ==================== -->
+		
+	<bean id="MenuRtLov_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.MenuRtLov_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.Menu"/>
+		<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.presenter.ext.security.qb.MenuRtLov_DsQb" />
+	</bean>
+	
+	<!-- ==================== MenuItem ==================== -->
+		
+	<bean id="MenuItem_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.MenuItem_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.MenuItem"/>
+		<property name="paramClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.MenuItem_DsParam"/>
+		<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.presenter.impl.security.qb.MenuItem_DsQb" />
+	</bean>
+	
+	<!-- ==================== MenuItemLov ==================== -->
+		
+	<bean id="MenuItemLov_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.MenuItemLov_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.MenuItem"/>
+	</bean>
+	
+	<!-- ==================== MenuItemRtLov ==================== -->
+		
+	<bean id="MenuItemRtLov_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.MenuItemRtLov_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.MenuItem"/>
+		<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.presenter.ext.security.qb.MenuItemRtLov_DsQb" />
+		<property name="readOnly" value="true" />
+	</bean>
+	
+	<!-- ==================== AccessControl ==================== -->
+		
+	<bean id="AccessControl_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.AccessControl_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.AccessControl"/>
+		<property name="paramClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.AccessControl_DsParam"/>
+		<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.presenter.impl.security.qb.AccessControl_DsQb" />
+		<property name="rpcData" >
+			<map>
+				<entry key="copyRulesFromAccessControl">
+					<bean class="net.nan21.dnet.core.presenter.descriptor.RpcDefinition">
+						<constructor-arg name="delegateClass" value="net.nan21.dnet.module.ad.presenter.ext.security.delegate.AccessControl_Pd"/>
+						<constructor-arg name="methodName" value="copyRulesFromAccessControl" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- ==================== AccessControlLov ==================== -->
+		
+	<bean id="AccessControlLov_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.AccessControlLov_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.AccessControl"/>
+		<property name="readOnly" value="true" />
+	</bean>
+	
+	<!-- ==================== AccessControlAsgn ==================== -->
+		
+	<bean id="AccessControlAsgn_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.AccessControlAsgn_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.AccessControlAsgn"/>
+	</bean>
+	
+	<!-- ==================== AccessControlDs ==================== -->
+		
+	<bean id="AccessControlDs_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.AccessControlDs_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.AccessControlDs"/>
+	</bean>
+	
+	<!-- ==================== AccessControlDsRpc ==================== -->
+		
+	<bean id="AccessControlDsRpc_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.AccessControlDsRpc_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.AccessControlDsRpc"/>
+	</bean>
+</beans>

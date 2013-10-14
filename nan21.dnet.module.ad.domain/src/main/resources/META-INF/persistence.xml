@@ -1,0 +1,54 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		
+		<!-- Declared -->
+		<class>net.nan21.dnet.module.ad.domain.impl.quartz.QuartzBlobTrigger</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.quartz.QuartzCalendar</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.quartz.QuartzCronTrigger</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.quartz.QuartzFiredTrigger</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.quartz.QuartzJobDetail</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.quartz.QuartzLock</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.quartz.QuartzPausedTriggerGroup</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.quartz.QuartzSchedulerState</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.quartz.QuartzSimpleTrigger</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.quartz.QuartzSimpropTrigger</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.quartz.QuartzTrigger</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.scheduler.JobContext</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.scheduler.JobContextParam</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.scheduler.JobLog</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.scheduler.JobLogMessage</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.scheduler.JobTimer</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.security.AccessControl</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.security.AccessControlAsgn</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.security.AccessControlDs</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.security.AccessControlDsRpc</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.security.Menu</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.security.MenuItem</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.security.Role</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.security.User</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.security.UserGroup</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.system.Client</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.system.DataSource</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.system.DataSourceField</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.system.DataSourceRpc</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.system.DateFormat</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.system.DateFormatMask</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.system.DbChangeLog</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.system.FrameExtension</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.system.Job</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.system.JobParam</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.system.Param</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.system.ParamValue</class>
+		
+		<!-- Dependencies -->
+		
+		<exclude-unlisted-classes>true</exclude-unlisted-classes> 
+		<properties>
+			<property name="eclipselink.weaving" value="static" />
+		</properties>
+	</persistence-unit>
+</persistence>

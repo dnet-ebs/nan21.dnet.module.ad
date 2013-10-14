@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<tx:annotation-driven mode="aspectj"/>
+
+	<!-- Transaction manager configuration. -->
+
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="doChangePassword" read-only="false" rollback-for="BusinessException"/>
+		</tx:attributes>
+	</tx:advice>
+ 
+	<aop:config>
+		<aop:pointcut id="serviceMethods" expression="bean(changePasswordService)"/>		 
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods"/>
+	</aop:config>
+
+	<bean name="authenticationClientUserService" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.security.AuthenticationClientUserService"/>
+
+	<bean name="changePasswordService"  scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.security.ChangePasswordService"/>
+
+	<bean name="passwordValidator"  scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.security.DefaultPasswordValidator"/>		 
+
+	<bean name="authorizationFactory" class="net.nan21.dnet.module.ad.security.AuthorizationFactory"/>
+	<bean class="net.nan21.dnet.module.ad.security.AuthorizationForAsgn" lazy-init="true"/>
+	<bean class="net.nan21.dnet.module.ad.security.AuthorizationForDs" lazy-init="true"/>
+	<bean class="net.nan21.dnet.module.ad.security.AuthorizationForJob" lazy-init="true"/>
+</beans>

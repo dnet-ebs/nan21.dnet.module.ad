@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:osgi-compendium="http://www.springframework.org/schema/osgi-compendium"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/osgi-compendium
+		http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- Properties -->
+	<context:property-placeholder properties-ref="dnet-properties" />
+	<osgi-compendium:cm-properties id="dnet-properties"
+		persistent-id="net.nan21.dnet" />
+
+	<context:annotation-config />
+
+	<!-- Transaction manager configuration. -->
+
+	<tx:annotation-driven mode="aspectj"/>
+
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="insert" read-only="false" rollback-for="BusinessException" />
+			<tx:method name="update" read-only="false" rollback-for="BusinessException" />
+			<tx:method name="delete*" read-only="false" rollback-for="BusinessException" />
+			<tx:method name="do*" read-only="false" rollback-for="BusinessException" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="services" expression="execution(* *..*Service.*(..))" />		
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="services" />
+	</aop:config>
+
+	<bean id="serviceLocator"
+		class="net.nan21.dnet.core.business.service.ServiceLocatorBusiness" />
+
+	<bean id="entityServiceFactory"
+		class="net.nan21.dnet.core.business.service.entity.EntityServiceFactory" />
+
+	<bean id="defaultAsgnTxService" 
+	  	class="net.nan21.dnet.core.business.service.asgn.DefaultAsgnTxService"/>
+
+	<bean id="jobFactory" 
+			class="net.nan21.dnet.core.business.service.job.BusinessJobFactory">
+	</bean>
+
+	<bean id="asgnTxServiceFactory" class="net.nan21.dnet.core.business.service.asgn.AsgnTxServiceFactory">
+		<property name="name" value="nan21.dnet.module.ad.business"/>
+	</bean>
+
+	<bean id="paramValueProvider" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.ext.system.ParamValueProvider" />
+
+	<bean id="clientInfoProvider" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.ext.system.ClientInfoProvider" />
+
+	<bean id="persistableLogService" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.ext.PersistableJobLogService" />
+
+	<bean id="importDataPackageService" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.business.service.other.ImportDataPackageService" />	
+
+	<import resource="beans/system.xml" />
+	<import resource="beans/security.xml" />
+	<import resource="beans/scheduler.xml" />
+</beans>

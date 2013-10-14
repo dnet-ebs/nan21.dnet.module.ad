@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="Client" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.ext.system.service.Client_Service"/>				
+
+	<bean id="DbChangeLog" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.system.DbChangeLog_Service"/>				
+
+	<bean id="Param" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.ext.system.service.Param_Service"/>				
+
+	<bean id="ParamValue" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.system.ParamValue_Service"/>				
+
+	<bean id="DataSource" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.system.DataSource_Service"/>				
+
+	<bean id="DataSourceField" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.system.DataSourceField_Service"/>				
+
+	<bean id="DataSourceRpc" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.system.DataSourceRpc_Service"/>				
+
+	<bean id="Job" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.system.Job_Service"/>				
+
+	<bean id="JobParam" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.system.JobParam_Service"/>				
+
+	<bean id="DateFormat" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.system.DateFormat_Service"/>				
+
+	<bean id="DateFormatMask" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.system.DateFormatMask_Service"/>				
+
+	<bean id="FrameExtension" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.system.FrameExtension_Service"/>				
+</beans>

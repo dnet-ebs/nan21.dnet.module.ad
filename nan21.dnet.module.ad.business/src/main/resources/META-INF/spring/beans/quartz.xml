@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="QuartzBlobTrigger" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.quartz.QuartzBlobTrigger_Service"/>				
+
+	<bean id="QuartzCalendar" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.quartz.QuartzCalendar_Service"/>				
+
+	<bean id="QuartzCronTrigger" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.quartz.QuartzCronTrigger_Service"/>				
+
+	<bean id="QuartzFiredTrigger" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.quartz.QuartzFiredTrigger_Service"/>				
+
+	<bean id="QuartzJobDetail" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.quartz.QuartzJobDetail_Service"/>				
+
+	<bean id="QuartzLock" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.quartz.QuartzLock_Service"/>				
+
+	<bean id="QuartzPausedTriggerGroup" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.quartz.QuartzPausedTriggerGroup_Service"/>				
+
+	<bean id="QuartzSchedulerState" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.quartz.QuartzSchedulerState_Service"/>				
+
+	<bean id="QuartzSimpleTrigger" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.quartz.QuartzSimpleTrigger_Service"/>				
+
+	<bean id="QuartzSimpropTrigger" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.quartz.QuartzSimpropTrigger_Service"/>				
+
+	<bean id="QuartzTrigger" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.quartz.QuartzTrigger_Service"/>				
+</beans>

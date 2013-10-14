@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- ==================== User_Role ==================== -->
+	
+	<bean id="User_Role_Asgn" scope="singleton" lazy-init="true"
+			class="net.nan21.dnet.core.presenter.service.asgn.DefaultAsgnService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.User_Role_Asgn"/>
+		<property name="filterClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.User_Role_Asgn"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.Role"/>
+		<property name="ctx">
+			<bean class="net.nan21.dnet.core.api.descriptor.AsgnContext">
+				<property name="leftTable" value="AD_ROLE"/>
+				<property name="rightTable" value="AD_USR_ROLE"/>
+				<property name="rightItemIdField" value="ROLES_ID"/>
+				<property name="rightObjectIdField" value="USERS_ID"/>
+			</bean>
+		</property>
+		<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business"/>
+	</bean>
+	
+	<!-- ==================== Role_User ==================== -->
+	
+	<bean id="Role_User_Asgn" scope="singleton" lazy-init="true"
+			class="net.nan21.dnet.core.presenter.service.asgn.DefaultAsgnService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.Role_User_Asgn"/>
+		<property name="filterClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.Role_User_Asgn"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.User"/>
+		<property name="ctx">
+			<bean class="net.nan21.dnet.core.api.descriptor.AsgnContext">
+				<property name="leftTable" value="AD_USR"/>
+				<property name="rightTable" value="AD_USR_ROLE"/>
+				<property name="rightItemIdField" value="USERS_ID"/>
+				<property name="rightObjectIdField" value="ROLES_ID"/>
+			</bean>
+		</property>
+		<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business"/>
+	</bean>
+	
+	<!-- ==================== User_UserGroup ==================== -->
+	
+	<bean id="User_UserGroup_Asgn" scope="singleton" lazy-init="true"
+			class="net.nan21.dnet.core.presenter.service.asgn.DefaultAsgnService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.User_UserGroup_Asgn"/>
+		<property name="filterClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.User_UserGroup_Asgn"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.UserGroup"/>
+		<property name="ctx">
+			<bean class="net.nan21.dnet.core.api.descriptor.AsgnContext">
+				<property name="leftTable" value="AD_USRGRP"/>
+				<property name="rightTable" value="AD_USR_USRGRP"/>
+				<property name="rightItemIdField" value="GROUPS_ID"/>
+				<property name="rightObjectIdField" value="USERS_ID"/>
+			</bean>
+		</property>
+		<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business"/>
+	</bean>
+	
+	<!-- ==================== UserGroup_User ==================== -->
+	
+	<bean id="UserGroup_User_Asgn" scope="singleton" lazy-init="true"
+			class="net.nan21.dnet.core.presenter.service.asgn.DefaultAsgnService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.UserGroup_User_Asgn"/>
+		<property name="filterClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.UserGroup_User_Asgn"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.User"/>
+		<property name="ctx">
+			<bean class="net.nan21.dnet.core.api.descriptor.AsgnContext">
+				<property name="leftTable" value="AD_USR"/>
+				<property name="rightTable" value="AD_USR_USRGRP"/>
+				<property name="rightItemIdField" value="USERS_ID"/>
+				<property name="rightObjectIdField" value="GROUPS_ID"/>
+			</bean>
+		</property>
+		<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business"/>
+	</bean>
+	
+	<!-- ==================== AccessControl_Role ==================== -->
+	
+	<bean id="AccessControl_Role_Asgn" scope="singleton" lazy-init="true"
+			class="net.nan21.dnet.core.presenter.service.asgn.DefaultAsgnService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.AccessControl_Role_Asgn"/>
+		<property name="filterClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.AccessControl_Role_Asgn"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.Role"/>
+		<property name="ctx">
+			<bean class="net.nan21.dnet.core.api.descriptor.AsgnContext">
+				<property name="leftTable" value="AD_ROLE"/>
+				<property name="rightTable" value="AD_ROLE_ACL"/>
+				<property name="rightItemIdField" value="ROLES_ID"/>
+				<property name="rightObjectIdField" value="ACCESSCONTROLS_ID"/>
+			</bean>
+		</property>
+		<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business"/>
+	</bean>
+	
+	<!-- ==================== Role_AccessControl ==================== -->
+	
+	<bean id="Role_AccessControl_Asgn" scope="singleton" lazy-init="true"
+			class="net.nan21.dnet.core.presenter.service.asgn.DefaultAsgnService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.Role_AccessControl_Asgn"/>
+		<property name="filterClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.Role_AccessControl_Asgn"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.AccessControl"/>
+		<property name="ctx">
+			<bean class="net.nan21.dnet.core.api.descriptor.AsgnContext">
+				<property name="leftTable" value="AD_ACL"/>
+				<property name="rightTable" value="AD_ROLE_ACL"/>
+				<property name="rightItemIdField" value="ACCESSCONTROLS_ID"/>
+				<property name="rightObjectIdField" value="ROLES_ID"/>
+			</bean>
+		</property>
+		<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business"/>
+	</bean>
+	
+	<!-- ==================== MenuItem_Role ==================== -->
+	
+	<bean id="MenuItem_Role_Asgn" scope="singleton" lazy-init="true"
+			class="net.nan21.dnet.core.presenter.service.asgn.DefaultAsgnService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.MenuItem_Role_Asgn"/>
+		<property name="filterClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.MenuItem_Role_Asgn"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.Role"/>
+		<property name="ctx">
+			<bean class="net.nan21.dnet.core.api.descriptor.AsgnContext">
+				<property name="leftTable" value="AD_ROLE"/>
+				<property name="rightTable" value="AD_ROLE_MENUITEM"/>
+				<property name="rightItemIdField" value="ROLES_ID"/>
+				<property name="rightObjectIdField" value="MENUITEMS_ID"/>
+			</bean>
+		</property>
+		<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business"/>
+	</bean>
+	
+	<!-- ==================== Role_MenuItem ==================== -->
+	
+	<bean id="Role_MenuItem_Asgn" scope="singleton" lazy-init="true"
+			class="net.nan21.dnet.core.presenter.service.asgn.DefaultAsgnService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.Role_MenuItem_Asgn"/>
+		<property name="filterClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.Role_MenuItem_Asgn"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.MenuItem"/>
+		<property name="ctx">
+			<bean class="net.nan21.dnet.core.api.descriptor.AsgnContext">
+				<property name="leftTable" value="AD_MENU_ITEM"/>
+				<property name="rightTable" value="AD_ROLE_MENUITEM"/>
+				<property name="rightItemIdField" value="MENUITEMS_ID"/>
+				<property name="rightObjectIdField" value="ROLES_ID"/>
+			</bean>
+		</property>
+		<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business"/>
+	</bean>
+	
+	<!-- ==================== Menu_Role ==================== -->
+	
+	<bean id="Menu_Role_Asgn" scope="singleton" lazy-init="true"
+			class="net.nan21.dnet.core.presenter.service.asgn.DefaultAsgnService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.Menu_Role_Asgn"/>
+		<property name="filterClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.Menu_Role_Asgn"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.Role"/>
+		<property name="ctx">
+			<bean class="net.nan21.dnet.core.api.descriptor.AsgnContext">
+				<property name="leftTable" value="AD_ROLE"/>
+				<property name="rightTable" value="AD_ROLE_MENU"/>
+				<property name="rightItemIdField" value="ROLES_ID"/>
+				<property name="rightObjectIdField" value="MENUS_ID"/>
+			</bean>
+		</property>
+		<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business"/>
+	</bean>
+	
+	<!-- ==================== Role_Menu ==================== -->
+	
+	<bean id="Role_Menu_Asgn" scope="singleton" lazy-init="true"
+			class="net.nan21.dnet.core.presenter.service.asgn.DefaultAsgnService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.Role_Menu_Asgn"/>
+		<property name="filterClass" value="net.nan21.dnet.module.ad.presenter.impl.security.model.Role_Menu_Asgn"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.security.Menu"/>
+		<property name="ctx">
+			<bean class="net.nan21.dnet.core.api.descriptor.AsgnContext">
+				<property name="leftTable" value="AD_MENU"/>
+				<property name="rightTable" value="AD_ROLE_MENU"/>
+				<property name="rightItemIdField" value="MENUS_ID"/>
+				<property name="rightObjectIdField" value="ROLES_ID"/>
+			</bean>
+		</property>
+		<property name="asgnTxFactoryName" value="nan21.dnet.module.ad.business"/>
+	</bean>
+</beans>

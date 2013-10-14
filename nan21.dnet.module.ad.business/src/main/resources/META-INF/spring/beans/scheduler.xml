@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="JobContext" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.ext.scheduler.service.JobContext_Service"/>				
+
+	<bean id="JobContextParam" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.ext.scheduler.service.JobContextParam_Service"/>				
+
+	<bean id="JobTimer" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.ext.scheduler.service.JobTimer_Service"/>				
+
+	<bean id="JobLog" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.scheduler.JobLog_Service"/>				
+
+	<bean id="JobLogMessage" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.scheduler.JobLogMessage_Service"/>				
+</beans>

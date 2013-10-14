@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="User" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.ext.security.service.User_Service"/>				
+
+	<bean id="UserGroup" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.security.UserGroup_Service"/>				
+
+	<bean id="Role" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.security.Role_Service"/>				
+
+	<bean id="AccessControl" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.security.AccessControl_Service"/>				
+
+	<bean id="AccessControlAsgn" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.security.AccessControlAsgn_Service"/>				
+
+	<bean id="AccessControlDs" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.security.AccessControlDs_Service"/>				
+
+	<bean id="AccessControlDsRpc" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.security.AccessControlDsRpc_Service"/>				
+
+	<bean id="Menu" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.security.Menu_Service"/>				
+
+	<bean id="MenuItem" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.security.MenuItem_Service"/>				
+</beans>
