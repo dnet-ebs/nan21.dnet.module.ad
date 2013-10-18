@@ -24,11 +24,11 @@ Ext.define(Dnet.ns.ad + "User_Dc$Filter" , {
 		/* =========== controls =========== */
 		.addTextField({ name:"name", dataIndex:"name"})
 		.addTextField({ name:"loginName", dataIndex:"loginName"})
-		.addLov({xtype:"ad_Users_Lov", name:"code", dataIndex:"code", caseRestriction:"uppercase",
+		.addLov({name:"code", dataIndex:"code", xtype:"ad_Users_Lov", caseRestriction:"uppercase",
 			retFieldMapping: [{lovField:"id", dsField: "id"} ]})
-		.addLov({xtype:"ad_Roles_Lov", name:"withRole", paramIndex:"withRole",
+		.addLov({name:"withRole", paramIndex:"withRole", xtype:"ad_Roles_Lov",
 			retFieldMapping: [{lovField:"id", dsParam: "withRoleId"} ]})
-		.addLov({xtype:"ad_UserGroups_Lov", name:"inGroup", paramIndex:"inGroup",
+		.addLov({name:"inGroup", paramIndex:"inGroup", xtype:"ad_UserGroups_Lov",
 			retFieldMapping: [{lovField:"id", dsParam: "inGroupId"} ]})
 		.addBooleanField({ name:"active", dataIndex:"active"})
 		.addBooleanField({ name:"locked", dataIndex:"locked"})
@@ -99,7 +99,7 @@ Ext.define(Dnet.ns.ad + "User_Dc$Edit" , {
 		.addBooleanField({ name:"locked", dataIndex:"locked"})
 		.addCombo({ xtype:"combo", name:"decimalSeparator", dataIndex:"decimalSeparator", store:[ ".", ","]})
 		.addCombo({ xtype:"combo", name:"thousandSeparator", dataIndex:"thousandSeparator", store:[ ".", ","]})
-		.addLov({xtype:"ad_DateFormats_Lov", name:"dateFormat", dataIndex:"dateFormat",
+		.addLov({name:"dateFormat", dataIndex:"dateFormat", xtype:"ad_DateFormats_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "dateFormatId"} ]})
 		
 		/* =========== containers =========== */

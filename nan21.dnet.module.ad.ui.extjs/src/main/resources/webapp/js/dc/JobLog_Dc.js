@@ -23,11 +23,11 @@ Ext.define(Dnet.ns.ad + "JobLog_Dc$Filter" , {
 		
 		/* =========== controls =========== */
 		.addTextField({ name:"id", dataIndex:"id"})
-		.addLov({xtype:"ad_Jobs_Lov", name:"jobName", dataIndex:"jobName"})
-		.addLov({xtype:"ad_JobContexts_Lov", name:"jobContext", dataIndex:"jobContext",
+		.addLov({name:"jobName", dataIndex:"jobName", xtype:"ad_Jobs_Lov"})
+		.addLov({name:"jobContext", dataIndex:"jobContext", xtype:"ad_JobContexts_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "jobContextId"} ],
 			filterFieldMapping: [{lovField:"jobName", dsField: "jobName"} ]})
-		.addLov({xtype:"ad_JobTimers_Lov", name:"jobTimer", dataIndex:"jobTimer",
+		.addLov({name:"jobTimer", dataIndex:"jobTimer", xtype:"ad_JobTimers_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "jobTimerId"} ],
 			filterFieldMapping: [{lovField:"jobContextId", dsField: "jobContextId"} ]})
 		.addDateField({name:"startTime_From", dataIndex:"startTime_From", emptyText:"From" })

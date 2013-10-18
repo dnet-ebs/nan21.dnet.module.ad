@@ -21,8 +21,8 @@ Ext.define(Dnet.ns.ad + "AccessControlDsRpc_Dc$Filter" , {
 		this._getBuilder_()
 		
 		/* =========== controls =========== */
-		.addLov({xtype:"ad_DataSourcesDs_Lov", name:"dsName", dataIndex:"dsName"})
-		.addLov({xtype:"ad_AccessControls_Lov", name:"accessControl", dataIndex:"accessControl",
+		.addLov({name:"dsName", dataIndex:"dsName", xtype:"ad_DataSourcesDs_Lov"})
+		.addLov({name:"accessControl", dataIndex:"accessControl", xtype:"ad_AccessControls_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "accessControlId"} ]})
 		
 		/* =========== containers =========== */

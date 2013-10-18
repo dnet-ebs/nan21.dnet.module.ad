@@ -22,7 +22,7 @@ Ext.define(Dnet.ns.ad + "ParamValue_Dc$Filter" , {
 		this._getBuilder_()
 		
 		/* =========== controls =========== */
-		.addLov({xtype:"ad_Params_Lov", name:"sysparam", dataIndex:"sysParam", caseRestriction:"uppercase"})
+		.addLov({name:"sysparam", dataIndex:"sysParam", xtype:"ad_Params_Lov", caseRestriction:"uppercase"})
 		.addDateField({name:"validAt", paramIndex:"validAt"})
 		
 		/* =========== containers =========== */

@@ -27,7 +27,7 @@ Ext.define(Dnet.ns.ad + "MyUser_Dc$Edit" , {
 		.addTextField({ name:"loginName", dataIndex:"loginName"})
 		.addCombo({ xtype:"combo", name:"decimalSeparator", dataIndex:"decimalSeparator", store:[ ".", ","]})
 		.addCombo({ xtype:"combo", name:"thousandSeparator", dataIndex:"thousandSeparator", store:[ ".", ","]})
-		.addLov({xtype:"ad_DateFormats_Lov", name:"dateFormat", dataIndex:"dateFormat",
+		.addLov({name:"dateFormat", dataIndex:"dateFormat", xtype:"ad_DateFormats_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "dateFormatId"} ]})
 		
 		/* =========== containers =========== */

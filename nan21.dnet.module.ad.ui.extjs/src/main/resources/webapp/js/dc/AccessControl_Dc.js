@@ -22,10 +22,10 @@ Ext.define(Dnet.ns.ad + "AccessControl_Dc$Filter" , {
 		this._getBuilder_()
 		
 		/* =========== controls =========== */
-		.addLov({xtype:"ad_AccessControls_Lov", name:"name", dataIndex:"name",
+		.addLov({name:"name", dataIndex:"name", xtype:"ad_AccessControls_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "id"} ]})
 		.addBooleanField({ name:"active", dataIndex:"active"})
-		.addLov({xtype:"ad_Roles_Lov", name:"withRole", paramIndex:"withRole",
+		.addLov({name:"withRole", paramIndex:"withRole", xtype:"ad_Roles_Lov",
 			retFieldMapping: [{lovField:"id", dsParam: "withRoleId"} ]})
 		
 		/* =========== containers =========== */
@@ -78,7 +78,7 @@ Ext.define(Dnet.ns.ad + "AccessControl_Dc$CopyRulesFromSource" , {
 		this._getBuilder_()
 		
 		/* =========== controls =========== */
-		.addLov({xtype:"ad_AccessControls_Lov", name:"copyFrom", paramIndex:"copyFrom",
+		.addLov({name:"copyFrom", paramIndex:"copyFrom", xtype:"ad_AccessControls_Lov",
 			retFieldMapping: [{lovField:"id", dsParam: "copyFromId"} ]})
 		.addBooleanField({ name:"skipDs", paramIndex:"skipDs"})
 		.addBooleanField({ name:"skipAsgn", paramIndex:"skipAsgn"})

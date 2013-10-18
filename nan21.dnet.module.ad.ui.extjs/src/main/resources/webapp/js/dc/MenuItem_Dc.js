@@ -23,7 +23,7 @@ Ext.define(Dnet.ns.ad + "MenuItem_Dc$Filter" , {
 		
 		/* =========== controls =========== */
 		.addTextField({ name:"title", dataIndex:"title"})
-		.addLov({xtype:"ad_MenuItems_Lov", name:"name", dataIndex:"name",
+		.addLov({name:"name", dataIndex:"name", xtype:"ad_MenuItems_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "id"} ]})
 		.addTextField({ name:"frame", dataIndex:"frame"})
 		.addTextField({ name:"bundle", dataIndex:"bundle"})
@@ -33,9 +33,9 @@ Ext.define(Dnet.ns.ad + "MenuItem_Dc$Filter" , {
 		.addBooleanField({ name:"separatorAfter", dataIndex:"separatorAfter"})
 		.addBooleanField({ name:"foldersOnly", paramIndex:"foldersOnly"})
 		.addBooleanField({ name:"framesOnly", paramIndex:"framesOnly"})
-		.addLov({xtype:"ad_MenuItems_Lov", name:"menuItem", dataIndex:"menuItem",
+		.addLov({name:"menuItem", dataIndex:"menuItem", xtype:"ad_MenuItems_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "menuItemId"} ]})
-		.addLov({xtype:"ad_Menus_Lov", name:"menu", dataIndex:"menu",
+		.addLov({name:"menu", dataIndex:"menu", xtype:"ad_Menus_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "menuId"} ]})
 		
 		/* =========== containers =========== */
@@ -139,9 +139,9 @@ Ext.define(Dnet.ns.ad + "MenuItem_Dc$Edit" , {
 		.addBooleanField({ name:"active", dataIndex:"active"})
 		.addBooleanField({ name:"separatorBefore", dataIndex:"separatorBefore"})
 		.addBooleanField({ name:"separatorAfter", dataIndex:"separatorAfter"})
-		.addLov({xtype:"ad_MenuItems_Lov", name:"menuItem", dataIndex:"menuItem",
+		.addLov({name:"menuItem", dataIndex:"menuItem", xtype:"ad_MenuItems_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "menuItemId"} ]})
-		.addLov({xtype:"ad_Menus_Lov", name:"menu", dataIndex:"menu",
+		.addLov({name:"menu", dataIndex:"menu", xtype:"ad_Menus_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "menuId"} ]})
 		
 		/* =========== containers =========== */

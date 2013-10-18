@@ -21,7 +21,7 @@ Ext.define(Dnet.ns.ad + "DateFormatMask_Dc$Filter" , {
 		this._getBuilder_()
 		
 		/* =========== controls =========== */
-		.addLov({xtype:"ad_DateFormats_Lov", name:"dateFormat", dataIndex:"dateFormat",
+		.addLov({name:"dateFormat", dataIndex:"dateFormat", xtype:"ad_DateFormats_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "dateFormatId"} ]})
 		.addTextField({ name:"mask", dataIndex:"mask", maxLength:32, caseRestriction:"uppercase"})
 		.addBooleanField({ name:"active", dataIndex:"active"})

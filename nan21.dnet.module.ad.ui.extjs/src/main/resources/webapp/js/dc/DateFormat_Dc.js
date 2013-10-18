@@ -21,7 +21,7 @@ Ext.define(Dnet.ns.ad + "DateFormat_Dc$Filter" , {
 		this._getBuilder_()
 		
 		/* =========== controls =========== */
-		.addLov({xtype:"ad_DateFormats_Lov", name:"name", dataIndex:"name"})
+		.addLov({name:"name", dataIndex:"name", xtype:"ad_DateFormats_Lov"})
 		.addBooleanField({ name:"active", dataIndex:"active"})
 		
 		/* =========== containers =========== */

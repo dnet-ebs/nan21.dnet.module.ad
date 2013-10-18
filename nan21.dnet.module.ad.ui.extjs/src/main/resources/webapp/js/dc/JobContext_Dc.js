@@ -22,7 +22,7 @@ Ext.define(Dnet.ns.ad + "JobContext_Dc$Filter" , {
 		
 		/* =========== controls =========== */
 		.addTextField({ name:"id", dataIndex:"id"})
-		.addLov({xtype:"ad_Jobs_Lov", name:"jobName", dataIndex:"jobName"})
+		.addLov({name:"jobName", dataIndex:"jobName", xtype:"ad_Jobs_Lov"})
 		.addTextField({ name:"name", dataIndex:"name"})
 		
 		/* =========== containers =========== */

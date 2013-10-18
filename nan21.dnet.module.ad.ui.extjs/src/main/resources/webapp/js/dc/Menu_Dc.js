@@ -21,7 +21,7 @@ Ext.define(Dnet.ns.ad + "Menu_Dc$Filter" , {
 		this._getBuilder_()
 		
 		/* =========== controls =========== */
-		.addLov({xtype:"ad_Menus_Lov", name:"name", dataIndex:"name",
+		.addLov({name:"name", dataIndex:"name", xtype:"ad_Menus_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "id"} ]})
 		.addTextField({ name:"title", dataIndex:"title"})
 		.addBooleanField({ name:"active", dataIndex:"active"})

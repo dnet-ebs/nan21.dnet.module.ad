@@ -21,7 +21,7 @@ Ext.define(Dnet.ns.ad + "DataSource_Dc$Filter" , {
 		this._getBuilder_()
 		
 		/* =========== controls =========== */
-		.addLov({xtype:"ad_DataSources_Lov", name:"name", dataIndex:"name",
+		.addLov({name:"name", dataIndex:"name", xtype:"ad_DataSources_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "id"} ]})
 		.addTextField({ name:"model", dataIndex:"model"})
 		.addBooleanField({ name:"isAsgn", dataIndex:"isAsgn"})

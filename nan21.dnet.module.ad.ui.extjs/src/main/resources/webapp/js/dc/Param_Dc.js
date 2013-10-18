@@ -21,7 +21,7 @@ Ext.define(Dnet.ns.ad + "Param_Dc$Filter" , {
 		this._getBuilder_()
 		
 		/* =========== controls =========== */
-		.addLov({xtype:"ad_Params_Lov", name:"code", dataIndex:"code", caseRestriction:"uppercase"})
+		.addLov({name:"code", dataIndex:"code", xtype:"ad_Params_Lov", caseRestriction:"uppercase"})
 		.addTextField({ name:"name", dataIndex:"name"})
 		.addTextField({ name:"defaultValue", dataIndex:"defaultValue"})
 		.addTextField({ name:"description", dataIndex:"description"})

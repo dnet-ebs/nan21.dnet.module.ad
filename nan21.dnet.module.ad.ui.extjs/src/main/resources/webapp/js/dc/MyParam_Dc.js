@@ -23,7 +23,7 @@ Ext.define(Dnet.ns.ad + "MyParam_Dc$Filter" , {
 		
 		/* =========== controls =========== */
 		.addTextField({ name:"name", dataIndex:"name"})
-		.addLov({xtype:"ad_Params_Lov", name:"code", dataIndex:"code", caseRestriction:"uppercase"})
+		.addLov({name:"code", dataIndex:"code", xtype:"ad_Params_Lov", caseRestriction:"uppercase"})
 		
 		/* =========== containers =========== */
 		.addPanel({ name:"main", autoScroll:true, layout: {type:"hbox", align:'top', pack:'start', defaultMargins: {right:5, left:5}},

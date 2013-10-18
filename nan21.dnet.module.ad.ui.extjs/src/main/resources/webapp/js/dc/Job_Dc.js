@@ -21,7 +21,7 @@ Ext.define(Dnet.ns.ad + "Job_Dc$Filter" , {
 		this._getBuilder_()
 		
 		/* =========== controls =========== */
-		.addLov({xtype:"ad_Jobs_Lov", name:"name", dataIndex:"name",
+		.addLov({name:"name", dataIndex:"name", xtype:"ad_Jobs_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "id"} ]})
 		.addTextField({ name:"javaClass", dataIndex:"javaClass"})
 		

@@ -24,9 +24,9 @@ Ext.define(Dnet.ns.ad + "JobTimer_Dc$Filter" , {
 		/* =========== controls =========== */
 		.addTextField({ name:"name", dataIndex:"name"})
 		.addTextField({ name:"id", dataIndex:"id"})
-		.addLov({xtype:"ad_Jobs_Lov", name:"jobName", dataIndex:"jobName",
+		.addLov({name:"jobName", dataIndex:"jobName", xtype:"ad_Jobs_Lov",
 			retFieldMapping: [{lovField:"name", dsField: "jobName"} ]})
-		.addLov({xtype:"ad_JobContexts_Lov", name:"jobContext", dataIndex:"jobContext",
+		.addLov({name:"jobContext", dataIndex:"jobContext", xtype:"ad_JobContexts_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "jobContextId"} ],
 			filterFieldMapping: [{lovField:"jobName", dsField: "jobName"} ]})
 		.addDateField({name:"startTime_From", dataIndex:"startTime_From", emptyText:"From" })
@@ -126,15 +126,15 @@ Ext.define(Dnet.ns.ad + "JobTimer_Dc$Edit" , {
 		/* =========== controls =========== */
 		.addTextField({ name:"name", dataIndex:"name"})
 		.addTextArea({ name:"description", dataIndex:"description", height:60})
-		.addLov({xtype:"ad_JobContexts_Lov", name:"jobContext", dataIndex:"jobContext",
+		.addLov({name:"jobContext", dataIndex:"jobContext", xtype:"ad_JobContexts_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "jobContextId"} ]})
 		.addCombo({ xtype:"combo", name:"type", dataIndex:"type", store:[ "simple", "cron"],listeners:{
 			change:{scope:this, fn:this.onTypeChange}
 		}})
-		.addTextField({ name:"cronExpression", dataIndex:"cronExpression", _visibleFn_: function(dc , rec) { return rec.data.type == "cron"; } })
-		.addNumberField({name:"repeatCount", dataIndex:"repeatCount", _visibleFn_: function(dc , rec) { return rec.data.type == "simple"; } })
-		.addNumberField({name:"repeatInterval", dataIndex:"repeatInterval", _visibleFn_: function(dc , rec) { return rec.data.type == "simple"; } })
-		.addCombo({ xtype:"combo", name:"repeatIntervalType", dataIndex:"repeatIntervalType", _visibleFn_: function(dc , rec) { return rec.data.type == "simple"; } , store:[ "seconds", "minutes", "hours"]})
+		.addTextField({ name:"cronExpression", dataIndex:"cronExpression", _visibleFn_: function(dc, rec) { return rec.data.type == "cron"; } })
+		.addNumberField({name:"repeatCount", dataIndex:"repeatCount", _visibleFn_: function(dc, rec) { return rec.data.type == "simple"; } })
+		.addNumberField({name:"repeatInterval", dataIndex:"repeatInterval", _visibleFn_: function(dc, rec) { return rec.data.type == "simple"; } })
+		.addCombo({ xtype:"combo", name:"repeatIntervalType", dataIndex:"repeatIntervalType", _visibleFn_: function(dc, rec) { return rec.data.type == "simple"; } , store:[ "seconds", "minutes", "hours"]})
 		.addDateTimeField({name:"startTime", dataIndex:"startTime"})
 		.addDateTimeField({name:"endTime", dataIndex:"endTime"})
 		

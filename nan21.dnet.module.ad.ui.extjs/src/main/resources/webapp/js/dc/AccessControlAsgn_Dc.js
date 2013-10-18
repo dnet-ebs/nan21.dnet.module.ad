@@ -21,8 +21,8 @@ Ext.define(Dnet.ns.ad + "AccessControlAsgn_Dc$Filter" , {
 		this._getBuilder_()
 		
 		/* =========== controls =========== */
-		.addLov({xtype:"ad_DataSourcesAsgn_Lov", name:"asgnName", dataIndex:"asgnName"})
-		.addLov({xtype:"ad_AccessControls_Lov", name:"accessControl", dataIndex:"accessControl",
+		.addLov({name:"asgnName", dataIndex:"asgnName", xtype:"ad_DataSourcesAsgn_Lov"})
+		.addLov({name:"accessControl", dataIndex:"accessControl", xtype:"ad_AccessControls_Lov",
 			retFieldMapping: [{lovField:"id", dsField: "accessControlId"} ]})
 		.addBooleanField({ name:"queryAllowed", dataIndex:"queryAllowed"})
 		.addBooleanField({ name:"updateAllowed", dataIndex:"updateAllowed"})
