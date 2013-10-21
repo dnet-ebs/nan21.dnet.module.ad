@@ -47,7 +47,7 @@ public class DataSource extends AbstractTypeNT {
 	public static final String NQ_FIND_BY_MODEL = "DataSource.findByModel";
 
 	@NotBlank
-	@Column(name = "MODEL", nullable = false, length = 400)
+	@Column(name = "MODEL", nullable = false, length = 255)
 	private String model;
 
 	@NotNull

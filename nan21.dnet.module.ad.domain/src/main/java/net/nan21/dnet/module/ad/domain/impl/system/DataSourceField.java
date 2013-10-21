@@ -43,7 +43,7 @@ public class DataSourceField extends AbstractTypeNT {
 	public static final String NQ_FIND_BY_NAME_PRIMITIVE = "DataSourceField.findByName_PRIMITIVE";
 
 	@NotBlank
-	@Column(name = "DATATYPE", nullable = false, length = 400)
+	@Column(name = "DATATYPE", nullable = false, length = 255)
 	private String dataType;
 
 	@ManyToOne(fetch = FetchType.LAZY, targetEntity = DataSource.class)

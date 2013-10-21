@@ -46,7 +46,7 @@ public class Job extends AbstractTypeNT {
 	public static final String NQ_FIND_BY_JCLASS = "Job.findByJclass";
 
 	@NotBlank
-	@Column(name = "JAVACLASS", nullable = false, length = 400)
+	@Column(name = "JAVACLASS", nullable = false, length = 255)
 	private String javaClass;
 
 	@OneToMany(fetch = FetchType.LAZY, targetEntity = JobParam.class, mappedBy = "job", cascade = CascadeType.ALL)

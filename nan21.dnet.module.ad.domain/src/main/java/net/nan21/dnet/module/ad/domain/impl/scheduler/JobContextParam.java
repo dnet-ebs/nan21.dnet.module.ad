@@ -47,7 +47,7 @@ public class JobContextParam extends AbstractAuditable {
 	private String paramName;
 
 	@NotBlank
-	@Column(name = "DATATYPE", nullable = false, length = 400)
+	@Column(name = "DATATYPE", nullable = false, length = 255)
 	private String dataType;
 
 	@Column(name = "VALUE", length = 400)

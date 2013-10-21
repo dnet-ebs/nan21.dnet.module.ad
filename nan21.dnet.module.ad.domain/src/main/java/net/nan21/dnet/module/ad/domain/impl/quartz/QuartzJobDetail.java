@@ -46,7 +46,7 @@ public class QuartzJobDetail implements Serializable {
 	@Column(name = "DESCRIPTION", length = 400)
 	private String description;
 
-	@Column(name = "JOB_CLASS_NAME", length = 400)
+	@Column(name = "JOB_CLASS_NAME", length = 255)
 	private String jobClassName;
 
 	@Column(name = "IS_DURABLE", length = 1)
