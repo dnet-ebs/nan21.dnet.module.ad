@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+	<changeSet author="amathe" id="TBL">
+		<createTable tableName="DATABASECHANGELOG">
+			<column name="AUTHOR" type="varchar2(255)"/>
+			<column name="COMMENTS" type="varchar2(400)"/>
+			<column name="DATEEXECUTED" type="DATE"/>
+			<column name="DESCRIPTION" type="varchar2(400)"/>
+			<column name="FILENAME" type="varchar2(255)"/>
+			<column name="ID" type="varchar2(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="LIQUIBASE" type="varchar2(255)"/>
+			<column name="MD5SUM" type="varchar2(255)"/>
+			<column name="ORDEREXECUTED" type="number(10)"/>
+			<column name="TAG" type="varchar2(255)"/>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="amathe" id="PK">
+		<addPrimaryKey 
+			constraintName="PK_DATABASECHANGELOG"
+			tableName="DATABASECHANGELOG"
+			columnNames="ID"/>
+	</changeSet>
+
+</databaseChangeLog>

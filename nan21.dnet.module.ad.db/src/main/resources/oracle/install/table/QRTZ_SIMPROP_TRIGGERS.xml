@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+	<changeSet author="amathe" id="TBL">
+		<createTable tableName="QRTZ_SIMPROP_TRIGGERS">
+			<column name="BOOL_PROP_1" type="varchar2(1)"/>
+			<column name="BOOL_PROP_2" type="varchar2(1)"/>
+			<column name="DEC_PROP_1" type="number(19,6)"/>
+			<column name="DEC_PROP_2" type="number(19,6)"/>
+			<column name="INT_PROP_1" type="number(10)"/>
+			<column name="INT_PROP_2" type="number(10)"/>
+			<column name="LONG_PROP_1" type="number(13)"/>
+			<column name="LONG_PROP_2" type="number(13)"/>
+			<column name="SCHED_NAME" type="varchar2(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="STR_PROP_1" type="varchar2(4000)"/>
+			<column name="STR_PROP_2" type="varchar2(4000)"/>
+			<column name="STR_PROP_3" type="varchar2(4000)"/>
+			<column name="TRIGGER_GROUP" type="varchar2(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="TRIGGER_NAME" type="varchar2(255)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="amathe" id="PK">
+		<addPrimaryKey 
+			constraintName="PK_QRTZ_SIMPROP_TRIGGERS"
+			tableName="QRTZ_SIMPROP_TRIGGERS"
+			columnNames="SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP"/>
+	</changeSet>
+
+</databaseChangeLog>

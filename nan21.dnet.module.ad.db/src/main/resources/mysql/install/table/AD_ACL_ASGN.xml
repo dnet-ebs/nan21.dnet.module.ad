@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+	<changeSet author="amathe" id="TBL">
+		<createTable tableName="AD_ACL_ASGN">
+			<column name="ACTIVE" type="int(1)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="ASGNNAME" type="varchar(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="CLIENTID" type="varchar(64)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="CREATEDAT" type="datetime">
+				<constraints nullable="false"/>
+			</column>
+			<column name="CREATEDBY" type="varchar(32)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="EXPORTALLOWED" type="int(1)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="ID" type="varchar(64)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="IMPORTALLOWED" type="int(1)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="MODIFIEDAT" type="datetime">
+				<constraints nullable="false"/>
+			</column>
+			<column name="MODIFIEDBY" type="varchar(32)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="NOTES" type="text"/>
+			<column name="QUERYALLOWED" type="int(1)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="REFID" type="varchar(64)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="UPDATEALLOWED" type="int(1)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="VERSION" type="bigint(10)"/>
+			<column name="ACCESSCONTROL_ID" type="varchar(64)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="amathe" id="PK">
+		<addPrimaryKey 
+			constraintName="PK_AD_ACL_ASGN"
+			tableName="AD_ACL_ASGN"
+			columnNames="ID"/>
+	</changeSet>
+	
+	<changeSet author="amathe" id="UK-1">
+		<addUniqueConstraint
+			constraintName="UK_AD_ACL_ASGN1"
+			tableName="AD_ACL_ASGN"
+			columnNames="CLIENTID,ACCESSCONTROL_ID,ASGNNAME"/>
+	</changeSet>
+
+</databaseChangeLog>

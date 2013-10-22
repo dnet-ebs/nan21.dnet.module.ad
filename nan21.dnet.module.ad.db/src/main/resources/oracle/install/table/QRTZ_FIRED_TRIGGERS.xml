@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+	<changeSet author="amathe" id="TBL">
+		<createTable tableName="QRTZ_FIRED_TRIGGERS">
+			<column name="ENTRY_ID" type="varchar2(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="FIRED_TIME" type="number(13)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="INSTANCE_NAME" type="varchar2(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="IS_NONCONCURRENT" type="varchar2(1)"/>
+			<column name="JOB_GROUP" type="varchar2(255)"/>
+			<column name="JOB_NAME" type="varchar2(255)"/>
+			<column name="PRIORITY" type="number(13)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="REQUESTS_RECOVERY" type="varchar2(1)"/>
+			<column name="SCHED_NAME" type="varchar2(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="SCHED_TIME" type="number(13)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="STATE" type="varchar2(16)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="TRIGGER_GROUP" type="varchar2(255)">
+				<constraints nullable="false"/>
+			</column>
+			<column name="TRIGGER_NAME" type="varchar2(255)">
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="amathe" id="PK">
+		<addPrimaryKey 
+			constraintName="PK_QRTZ_FIRED_TRIGGERS"
+			tableName="QRTZ_FIRED_TRIGGERS"
+			columnNames="SCHED_NAME,ENTRY_ID"/>
+	</changeSet>
+
+</databaseChangeLog>
