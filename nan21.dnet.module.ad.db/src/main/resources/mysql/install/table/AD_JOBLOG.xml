@@ -39,9 +39,7 @@
 			<column name="JOBCONTEXT_ID" type="varchar(64)">
 				<constraints nullable="false"/>
 			</column>
-			<column name="JOBTIMER_ID" type="varchar(64)">
-				<constraints />
-			</column>
+			<column name="JOBTIMER_ID" type="varchar(64)"/>
 		</createTable>
 	</changeSet>
 

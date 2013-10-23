@@ -51,9 +51,7 @@
 			</column>
 			<column name="THOUSANDSEPARATOR" type="varchar2(1)"/>
 			<column name="VERSION" type="number(10)"/>
-			<column name="DATEFORMAT_ID" type="varchar2(64)">
-				<constraints />
-			</column>
+			<column name="DATEFORMAT_ID" type="varchar2(64)"/>
 		</createTable>
 	</changeSet>
 

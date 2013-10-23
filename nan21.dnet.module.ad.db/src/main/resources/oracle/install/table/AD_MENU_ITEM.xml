@@ -45,12 +45,8 @@
 				<constraints nullable="false"/>
 			</column>
 			<column name="VERSION" type="number(10)"/>
-			<column name="MENUITEM_ID" type="varchar2(64)">
-				<constraints />
-			</column>
-			<column name="MENU_ID" type="varchar2(64)">
-				<constraints />
-			</column>
+			<column name="MENUITEM_ID" type="varchar2(64)"/>
+			<column name="MENU_ID" type="varchar2(64)"/>
 		</createTable>
 	</changeSet>
 
