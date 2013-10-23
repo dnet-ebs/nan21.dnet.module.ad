@@ -56,9 +56,9 @@
 			columnNames="CLIENTID,CODE"/>
 	</changeSet>
 	
-	<changeSet author="amathe" id="UK-1">
+	<changeSet author="amathe" id="UK-2">
 		<addUniqueConstraint
-			constraintName="UK_AD_ROLE1"
+			constraintName="UK_AD_ROLE2"
 			tableName="AD_ROLE"
 			columnNames="CLIENTID,NAME"/>
 	</changeSet>

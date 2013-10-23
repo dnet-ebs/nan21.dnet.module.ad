@@ -11,8 +11,8 @@
 		referencedColumnNames="ID"
 		/>
 </changeSet>
-<changeSet author="amathe" id="FK-1">
-	<addForeignKeyConstraint constraintName="FK_AD_JOBLOG1" 
+<changeSet author="amathe" id="FK-2">
+	<addForeignKeyConstraint constraintName="FK_AD_JOBLOG2" 
 		baseTableName="AD_JOBLOG"
 		baseColumnNames="JOBTIMER_ID"
 		referencedTableName="AD_JOBTRG" 
