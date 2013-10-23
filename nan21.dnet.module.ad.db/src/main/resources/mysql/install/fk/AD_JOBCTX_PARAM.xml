@@ -8,7 +8,6 @@
 		baseTableName="AD_JOBCTX_PARAM"
 		baseColumnNames="JOBCONTEXT_ID"
 		referencedTableName="AD_JOBCTX" 
-		referencedColumnNames="ID"
-		/>
+		referencedColumnNames="ID"/>
 </changeSet>
 </databaseChangeLog>

@@ -8,7 +8,6 @@
 		baseTableName="AD_USR"
 		baseColumnNames="DATEFORMAT_ID"
 		referencedTableName="SYS_DTFMT" 
-		referencedColumnNames="ID"
-		/>
+		referencedColumnNames="ID"/>
 </changeSet>
 </databaseChangeLog>

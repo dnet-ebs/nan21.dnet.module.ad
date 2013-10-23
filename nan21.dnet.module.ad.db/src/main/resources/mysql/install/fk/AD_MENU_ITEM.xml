@@ -8,15 +8,13 @@
 		baseTableName="AD_MENU_ITEM"
 		baseColumnNames="MENUITEM_ID"
 		referencedTableName="AD_MENU_ITEM" 
-		referencedColumnNames="ID"
-		/>
+		referencedColumnNames="ID"/>
 </changeSet>
 <changeSet author="amathe" id="FK-2">
 	<addForeignKeyConstraint constraintName="FK_AD_MENU_ITEM2" 
 		baseTableName="AD_MENU_ITEM"
 		baseColumnNames="MENU_ID"
 		referencedTableName="AD_MENU" 
-		referencedColumnNames="ID"
-		/>
+		referencedColumnNames="ID"/>
 </changeSet>
 </databaseChangeLog>

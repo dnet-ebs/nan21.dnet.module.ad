@@ -8,7 +8,6 @@
 		baseTableName="AD_JOBLOG_MSG"
 		baseColumnNames="JOBLOG_ID"
 		referencedTableName="AD_JOBLOG" 
-		referencedColumnNames="ID"
-		/>
+		referencedColumnNames="ID"/>
 </changeSet>
 </databaseChangeLog>

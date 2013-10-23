@@ -8,7 +8,6 @@
 		baseTableName="SYS_DS_FLD"
 		baseColumnNames="DATASOURCE_ID"
 		referencedTableName="SYS_DS" 
-		referencedColumnNames="ID"
-		/>
+		referencedColumnNames="ID"/>
 </changeSet>
 </databaseChangeLog>
