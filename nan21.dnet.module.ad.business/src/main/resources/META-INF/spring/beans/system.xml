@@ -42,4 +42,7 @@
 
 	<bean id="FrameExtension" scope="singleton" lazy-init="true"
 		class="net.nan21.dnet.module.ad.business.impl.system.FrameExtension_Service"/>				
+
+	<bean id="ViewState" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.module.ad.business.impl.system.ViewState_Service"/>				
 </beans>

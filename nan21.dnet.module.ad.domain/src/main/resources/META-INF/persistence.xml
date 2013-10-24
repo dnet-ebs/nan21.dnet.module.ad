@@ -43,6 +43,7 @@
 		<class>net.nan21.dnet.module.ad.domain.impl.system.JobParam</class>
 		<class>net.nan21.dnet.module.ad.domain.impl.system.Param</class>
 		<class>net.nan21.dnet.module.ad.domain.impl.system.ParamValue</class>
+		<class>net.nan21.dnet.module.ad.domain.impl.system.ViewState</class>
 		
 		<!-- Dependencies -->
 		

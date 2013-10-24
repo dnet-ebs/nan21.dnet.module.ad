@@ -282,4 +282,22 @@
 		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.system.model.FrameExtension_Ds"/>
 		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.system.FrameExtension"/>
 	</bean>
+	
+	<!-- ==================== ViewState ==================== -->
+		
+	<bean id="ViewState_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.system.model.ViewState_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.system.ViewState"/>
+	</bean>
+	
+	<!-- ==================== ViewStateRtLov ==================== -->
+		
+	<bean id="ViewStateRtLov_Ds" scope="singleton" lazy-init="true"
+		class="net.nan21.dnet.core.presenter.service.ds.DefaultEntityDsService">
+		<property name="modelClass" value="net.nan21.dnet.module.ad.presenter.impl.system.model.ViewStateRtLov_Ds"/>
+		<property name="entityClass" value="net.nan21.dnet.module.ad.domain.impl.system.ViewState"/>
+		<property name="paramClass" value="net.nan21.dnet.module.ad.presenter.impl.system.model.ViewStateRtLov_DsParam"/>
+		<property name="queryBuilderClass" value="net.nan21.dnet.module.ad.presenter.ext.system.qb.ViewStateRtLov_DsQb" />
+	</bean>
 </beans>
