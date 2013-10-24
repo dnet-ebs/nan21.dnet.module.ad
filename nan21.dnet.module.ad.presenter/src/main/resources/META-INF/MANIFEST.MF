@@ -14,10 +14,6 @@ Export-Package:
  net.nan21.dnet.module.ad.presenter.impl.security.model;version="2.0.0",
  net.nan21.dnet.module.ad.presenter.impl.system.model;version="2.0.0"
 Import-Package: 
- com.sun.mail.handlers;version="[1.4.0,1.4.1]", 
- com.sun.mail.smtp;version="[1.4.0,1.4.1]", 
- javax.mail;version="[1.4.0,1.4.1]", 
- javax.mail.internet;version="[1.4.0,1.4.1]", 
  javax.persistence;version="[2.0,2.2)", 
  javax.persistence.criteria;version="[2.0,2.2)", 
  javax.persistence.metamodel;version="[2.0,2.2)", 
