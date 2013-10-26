@@ -17,6 +17,6 @@ public class MyClient_DsQb
 	@Override
 	public void setFilter(MyClient_Ds filter) {
 		filter.setId(Session.user.get().getClientId());
-		this.filter = filter;
+		super.setFilter(filter);
 	}
 }
