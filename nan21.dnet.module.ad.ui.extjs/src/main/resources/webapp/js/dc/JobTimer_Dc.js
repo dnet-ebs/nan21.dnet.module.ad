@@ -23,7 +23,6 @@ Ext.define(Dnet.ns.ad + "JobTimer_Dc$Filter" , {
 		
 		/* =========== controls =========== */
 		.addTextField({ name:"name", dataIndex:"name"})
-		.addTextField({ name:"id", dataIndex:"id"})
 		.addLov({name:"jobName", dataIndex:"jobName", xtype:"ad_Jobs_Lov",
 			retFieldMapping: [{lovField:"name", dsField: "jobName"} ]})
 		.addLov({name:"jobContext", dataIndex:"jobContext", xtype:"ad_JobContexts_Lov",
@@ -31,11 +30,11 @@ Ext.define(Dnet.ns.ad + "JobTimer_Dc$Filter" , {
 			filterFieldMapping: [{lovField:"jobName", dsField: "jobName"} ]})
 		.addDateField({name:"startTime_From", dataIndex:"startTime_From", emptyText:"From" })
 		.addDateField({name:"startTime_To", dataIndex:"startTime_To", emptyText:"To" })
-		.addFieldContainer({name: "startTime", fieldLabel:"Start Time"})
+		.addFieldContainer({name: "startTime"})
 			.addChildrenTo("startTime",["startTime_From", "startTime_To"])
 		.addDateField({name:"endTime_From", dataIndex:"endTime_From", emptyText:"From" })
 		.addDateField({name:"endTime_To", dataIndex:"endTime_To", emptyText:"To" })
-		.addFieldContainer({name: "endTime", fieldLabel:"End Time"})
+		.addFieldContainer({name: "endTime"})
 			.addChildrenTo("endTime",["endTime_From", "endTime_To"])
 		.addCombo({ xtype:"combo", name:"type", dataIndex:"type", store:[ "simple", "cron"]})
 		.addCombo({ xtype:"combo", name:"repeatIntervalType", dataIndex:"repeatIntervalType", store:[ "seconds", "minutes", "hours"]})
@@ -56,7 +55,7 @@ Ext.define(Dnet.ns.ad + "JobTimer_Dc$Filter" , {
 		.addChildrenTo("main", ["col1", "col2", "col3"])
 		.addChildrenTo("col1", ["jobName", "jobContext", "name"])
 		.addChildrenTo("col2", ["type", "repeatIntervalType"])
-		.addChildrenTo("col3", ["startTime", "endTime", "id"]);
+		.addChildrenTo("col3", ["startTime", "endTime"]);
 	}
 });
 

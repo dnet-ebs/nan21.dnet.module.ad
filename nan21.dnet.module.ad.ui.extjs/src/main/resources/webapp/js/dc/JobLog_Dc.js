@@ -32,11 +32,11 @@ Ext.define(Dnet.ns.ad + "JobLog_Dc$Filter" , {
 			filterFieldMapping: [{lovField:"jobContextId", dsField: "jobContextId"} ]})
 		.addDateField({name:"startTime_From", dataIndex:"startTime_From", emptyText:"From" })
 		.addDateField({name:"startTime_To", dataIndex:"startTime_To", emptyText:"To" })
-		.addFieldContainer({name: "startTime", fieldLabel:"Start Time"})
+		.addFieldContainer({name: "startTime"})
 			.addChildrenTo("startTime",["startTime_From", "startTime_To"])
 		.addDateField({name:"endTime_From", dataIndex:"endTime_From", emptyText:"From" })
 		.addDateField({name:"endTime_To", dataIndex:"endTime_To", emptyText:"To" })
-		.addFieldContainer({name: "endTime", fieldLabel:"End Time"})
+		.addFieldContainer({name: "endTime"})
 			.addChildrenTo("endTime",["endTime_From", "endTime_To"])
 		
 		/* =========== containers =========== */

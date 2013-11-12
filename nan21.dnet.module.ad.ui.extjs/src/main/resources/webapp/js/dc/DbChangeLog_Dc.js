@@ -29,11 +29,11 @@ Ext.define(Dnet.ns.ad + "DbChangeLog_Dc$Filter" , {
 		.addTextField({ name:"txid", dataIndex:"txid", width:100})
 		.addDateField({name:"dateExecuted_From", dataIndex:"dateExecuted_From", emptyText:"From" })
 		.addDateField({name:"dateExecuted_To", dataIndex:"dateExecuted_To", emptyText:"To" })
-		.addFieldContainer({name: "dateExecuted", fieldLabel:"Date Executed"})
+		.addFieldContainer({name: "dateExecuted"})
 			.addChildrenTo("dateExecuted",["dateExecuted_From", "dateExecuted_To"])
 		.addNumberField({name:"orderExecuted_From", dataIndex:"orderExecuted_From", emptyText:"From" })
 		.addNumberField({name:"orderExecuted_To", dataIndex:"orderExecuted_To", emptyText:"To" })
-		.addFieldContainer({name: "orderExecuted", fieldLabel:"Order Executed"})
+		.addFieldContainer({name: "orderExecuted"})
 			.addChildrenTo("orderExecuted",["orderExecuted_From", "orderExecuted_To"])
 		
 		/* =========== containers =========== */
