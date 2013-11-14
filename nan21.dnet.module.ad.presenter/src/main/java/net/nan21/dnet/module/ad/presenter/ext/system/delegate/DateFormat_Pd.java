@@ -1,7 +1,9 @@
 package net.nan21.dnet.module.ad.presenter.ext.system.delegate;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import net.nan21.dnet.core.api.enums.DateFormatAttribute;
 import net.nan21.dnet.core.presenter.service.AbstractPresenterDelegate;
@@ -35,13 +37,22 @@ public class DateFormat_Pd extends AbstractPresenterDelegate {
 				namesToDelete.add(name);
 			}
 		}
-		srv.getEntityManager()
-				.createQuery(
-						"delete from "
-								+ DateFormatMask.class.getSimpleName()
-								+ " where mask in :masks and dateFormat.id = :dateFormatId")
-				.setParameter("masks", namesToDelete)
-				.setParameter("dateFormatId", ds.getId()).executeUpdate();
+
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("masks", namesToDelete);
+		params.put("dateFormatId", ds.getId());
+
+		srv.update("delete from " + DateFormatMask.class.getSimpleName()
+				+ " where mask in :masks and dateFormat.id = :dateFormatId",
+				params);
+
+		// srv.getEntityManager()
+		// .createQuery(
+		// "delete from "
+		// + DateFormatMask.class.getSimpleName()
+		// + " where mask in :masks and dateFormat.id = :dateFormatId")
+		// .setParameter("masks", namesToDelete)
+		// .setParameter("dateFormatId", ds.getId()).executeUpdate();
 
 		// add missing
 

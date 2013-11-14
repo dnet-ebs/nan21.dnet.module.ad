@@ -56,8 +56,6 @@ Ext.define(Dnet.ns.ad + "DateFormat_Ui" , {
 			.addTitle().addSeparator().addSeparator()
 			.addQuery().addSave().addCancel()
 			.addSeparator().addAutoLoad()
-			.addSeparator().addSeparator()
-			.addButtons([this._elems_.get("btnSynchronize") ])
 			.addReports()
 		.end();
 	}
